@@ -1,0 +1,41 @@
+{
+    "blocks": {
+        "d": "big",
+        "b": "small",
+        "y": "big",
+        "x": "small",
+        "a": "big",
+        "z": "big",
+        "c": "big"
+    },
+    "relationships": [
+        {
+            "block": "d",
+            "position": 2
+        },
+        {
+            "block": "b",
+            "position": 2
+        },
+        {
+            "block": "y",
+            "position": 1
+        },
+        {
+            "block": "x",
+            "position": 2
+        },
+        {
+            "block": "a",
+            "position": 1
+        },
+        {
+            "block": "z",
+            "position": 3
+        },
+        {
+            "block": "c",
+            "position": 2
+        }
+    ]
+}
