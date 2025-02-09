@@ -1,3 +1,6 @@
-(stack blocka blockb)
-(stack blockb blockc)
+(pick-up blockc)
 (stack blockc blockd)
+(pick-up blockb)
+(stack blockb blockc)
+(pick-up blocka)
+(stack blocka blockb)
