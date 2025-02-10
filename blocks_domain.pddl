@@ -1,44 +1,40 @@
 (define (domain blocks)
-  (:requirements :strips :typing)
+  (:requirements :strips)
 
-  (:types block) 
+  ;; Declare object types
+  (:types block agent)
 
+  ;; Declare predicates
   (:predicates
-  (clear ?x - block)
-  (on-table ?x - block)
-  (holding ?x - block)
-  (handempty) 
-  (on ?x - block ?y - block)
-)
+    (on ?x - block ?y - block)
+    (clear ?x - block)
+    (on-table ?x - block)
+    (holding ?x - block)
+    (handempty ?a - agent)
+  )
 
-
-
-
-  ;; Action to pick up a block from the table
+  ;; Define actions
   (:action pick-up
-    :parameters (?x - block)
-    :precondition (and (clear ?x) (on-table ?x) (handempty))
-    :effect (and (holding ?x) (not (clear ?x)) (not (on-table ?x)) (not (handempty)))
+    :parameters (?x - block ?a - agent)
+    :precondition (and (clear ?x) (on-table ?x) (handempty ?a))
+    :effect (and (not (clear ?x)) (not (on-table ?x)) (not (handempty ?a)) (holding ?x))
   )
 
-  ;; Action to put down a block on the table
   (:action put-down
-    :parameters (?x - block)
-    :precondition (holding ?x)
-    :effect (and (on-table ?x) (clear ?x) (handempty) (not (holding ?x)))
+    :parameters (?x - block ?a - agent)
+    :precondition (and (holding ?x) (handempty ?a))
+    :effect (and (clear ?x) (on-table ?x) (handempty ?a) (not (holding ?x)))
   )
 
-  ;; Action to stack a block on another block
   (:action stack
-    :parameters (?x - block ?y - block)
+    :parameters (?x - block ?y - block ?a - agent)
     :precondition (and (holding ?x) (clear ?y))
-    :effect (and (on ?x ?y) (clear ?x) (handempty) (not (holding ?x)) (not (clear ?y)))
+    :effect (and (not (holding ?x)) (not (clear ?y)) (clear ?x) (on ?x ?y))
   )
 
-  ;; Action to unstack a block from another block
   (:action unstack
-    :parameters (?x - block ?y - block)
-    :precondition (and (on ?x ?y) (clear ?x) (handempty))
-    :effect (and (holding ?x) (clear ?y) (not (on ?x ?y)) (not (handempty)) (not (clear ?x)))
+    :parameters (?x - block ?y - block ?a - agent)
+    :precondition (and (clear ?x) (on ?x ?y) (handempty ?a))
+    :effect (and (holding ?x) (clear ?y) (not (on ?x ?y)) (not (clear ?x)))
   )
 )

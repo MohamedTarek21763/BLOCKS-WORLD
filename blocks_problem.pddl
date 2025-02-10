@@ -1,25 +1,19 @@
 (define (problem blocks-problem)
   (:domain blocks)
-
-  (:objects blockA blockB blockC blockD - block)  ;; Ensure type is correct
-
-  (:init 
-    (on-table blockA) 
-    (on-table blockB) 
-    (on-table blockC) 
-    (on-table blockD) 
-    (clear blockA) 
-    (clear blockB) 
-    (clear blockC) 
-    (clear blockD) 
-    (handempty)
+  (:objects 
+    A B C - block
+    agent1 - agent
   )
-
+  (:init 
+    (on-table A)
+    (on-table B)
+    (clear A)
+    (clear B)
+    (handempty agent1)
+  )
   (:goal 
     (and 
-      (on blockA blockB) 
-      (on blockB blockC) 
-      (on blockC blockD)
+      (on A B)
     )
   )
 )

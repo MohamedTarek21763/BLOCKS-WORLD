@@ -1,6 +1,2 @@
-(pick-up blockc)
-(stack blockc blockd)
-(pick-up blockb)
-(stack blockb blockc)
-(pick-up blocka)
-(stack blocka blockb)
+(pick-up a agent1)
+(stack a b agent1)
