@@ -1,0 +1,29 @@
+2025-02-15 17:30:50,024 INFO     using search: breadth_first_search
+2025-02-15 17:30:50,025 INFO     using heuristic: None
+2025-02-15 17:30:50,025 INFO     Parsing Domain /Users/mohamedhassan/Downloads/BLOCKS-WORLD-main/blocks_domain.pddl
+2025-02-15 17:30:50,025 INFO     Parsing Problem /Users/mohamedhassan/Downloads/BLOCKS-WORLD-main/blocks_problem.pddl
+2025-02-15 17:30:50,026 DEBUG    < Domain definition: blocks Predicates: ['on', 'clear', 'on-table', 'holding', 'handempty'] Actions: ['pick-up', 'put-down', 'stack', 'unstack'] Constants: [] >
+2025-02-15 17:30:50,026 INFO     5 Predicates parsed
+2025-02-15 17:30:50,026 INFO     4 Actions parsed
+2025-02-15 17:30:50,026 INFO     4 Objects parsed
+2025-02-15 17:30:50,026 INFO     0 Constants parsed
+2025-02-15 17:30:50,026 INFO     Grounding start: blocks-problem
+2025-02-15 17:30:50,026 DEBUG    Grounding pick-up
+2025-02-15 17:30:50,026 DEBUG    Grounding put-down
+2025-02-15 17:30:50,026 DEBUG    Grounding stack
+2025-02-15 17:30:50,026 DEBUG    Grounding unstack
+2025-02-15 17:30:50,026 INFO     Relevance analysis removed 0 facts
+2025-02-15 17:30:50,026 INFO     Grounding end: blocks-problem
+2025-02-15 17:30:50,026 INFO     19 Variables created
+2025-02-15 17:30:50,026 INFO     24 Operators created
+2025-02-15 17:30:50,026 INFO     Search start: blocks-problem
+2025-02-15 17:30:50,026 DEBUG    breadth_first_search: Iteration 1, #unexplored=1
+2025-02-15 17:30:50,026 DEBUG    breadth_first_search: Iteration 2, #unexplored=2
+2025-02-15 17:30:50,026 DEBUG    breadth_first_search: Iteration 3, #unexplored=2
+2025-02-15 17:30:50,026 DEBUG    breadth_first_search: Iteration 4, #unexplored=2
+2025-02-15 17:30:50,026 INFO     Goal reached. Start extraction of solution.
+2025-02-15 17:30:50,026 INFO     4 Nodes expanded
+2025-02-15 17:30:50,026 INFO     Search end: blocks-problem
+2025-02-15 17:30:50,026 INFO     Search time: 0.00013
+2025-02-15 17:30:50,026 INFO     Plan length: 2
+2025-02-15 17:30:50,063 INFO     Plan correct
